@@ -40,9 +40,10 @@ def predict():
 def health_check():
    return jsonify({"status": 'healthy'})
 
+torch.hub.set_dir(os.path.join('static'))
+print("loading model...")
+model = torch.hub.load("ultralytics/yolov5", "yolov5x", force_reload=False)  # force_reload to recache
+print("model loaded.")
 
 if __name__ == "__main__":
-    
-    torch.hub.set_dir(os.path.join('static'))
-    model = torch.hub.load("ultralytics/yolov5", "yolov5x", force_reload=False)  # force_reload to recache
     app.run(host="0.0.0.0", port=5000)  # debug=True causes Restarting with stat
