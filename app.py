@@ -43,9 +43,6 @@ def health_check():
 
 if __name__ == "__main__":
     
-    # Fix known issue urllib.error.HTTPError 403: rate limit exceeded https://github.com/ultralytics/yolov5/pull/7210
-    torch.hub._validate_not_a_forked_repo = lambda a, b, c: True
     torch.hub.set_dir(os.path.join('static'))
-
-    model = torch.hub.load("ultralytics/yolov5", "yolov5s", force_reload=False)  # force_reload to recache
+    model = torch.hub.load("ultralytics/yolov5", "yolov5x", force_reload=False)  # force_reload to recache
     app.run(host="0.0.0.0", port=5000)  # debug=True causes Restarting with stat

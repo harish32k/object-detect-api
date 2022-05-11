@@ -4,3 +4,5 @@
 *.pyc
 *.vscode/
 static/*
+myrequirements.txt
+myenv/
