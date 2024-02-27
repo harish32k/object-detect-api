@@ -11,7 +11,6 @@ This application helps get a objects detected, labeled and annotated. The gets a
 ## How to use
 - Build the docker image using the `Dockerfile` in the repository, preferably using a service like Google Cloud Build to make the process easy. 
 - Deploy the model on Google Cloud Vertex AI platform using the docker image that is built.
-- 
 
 YoloV5 model link:
 https://github.com/ultralytics/yolov5
